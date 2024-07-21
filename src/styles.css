@@ -30,13 +30,13 @@ header {
   padding: 20px 25px;
   font-size: 2em;
   align-items: center;
-  font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 nav {
   display: flex;
   gap: 15px;
-
+  flex-grow: 1;
+  
   & button {
     background: none;
     cursor: pointer;
@@ -51,29 +51,37 @@ nav {
 }
 
 .home-content {
-  font-family: Georgia, 'Times New Roman', Times, serif;
   flex-grow: 1;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   padding-top: 2.5rem;
 }
 
 .about-content {
-  background: rgb(255,255,255,.3);
+  background: rgb(255,255,255,.5);
   position: relative;
   max-width: 800px;
   padding: 20px;
   font-size: 1.5rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
   letter-spacing: 2px;
   line-height: 2.4rem;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-@media (max-width: 400px) {
+.menu-content {
+  background: rgb(255,255,255,.4);
+  border-radius: 10px;
+  font-size: 2.5rem;
+}
+
+.active {
+  color: rgb(236, 235, 235);
+}
+
+@media (max-width: 600px) {
   header{
     flex-direction: column;
     padding-top: 10px;
@@ -83,11 +91,26 @@ nav {
     }
   }
 
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    & button {
+      font-size: 1.3rem;
+      flex-shrink: 1;
+    }
+  }
+
   .home-content {
     padding-left: 10px;
   }
 
   .about-content {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-content {
+    font-size: 1.3rem;
   }
 }
